@@ -6,6 +6,7 @@ const axios = require('axios');
 const smsReportRoutes = require("./routes/smsReports");
 const dashboard = require("./routes/dashboardReport");
 const template = require("./routes/templateReport");
+const clientReportRoutes = require("./routes/clientReports");
 
 const app = express();
 const PORT = 5000;
@@ -65,6 +66,8 @@ app.get('/health', async (req, res) => {
 
 app.use("/sms", smsReportRoutes);
 app.use("/dashboard", dashboard);
+app.use("/client", clientReportRoutes);
+app.use('/client-uploads', express.static(path.join(__dirname, 'routes', 'client-uploads')));
 app.use("/template", template);
 
 
