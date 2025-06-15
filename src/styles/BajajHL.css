@@ -1,0 +1,30 @@
+.bajaj-button {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+.bajaj-button:hover{
+    background: linear-gradient(to left, #00a9ee -0.58%, #1c2347 102.11%);
+    border: 2px white solid;
+}
+
+.bajaj-button:active{
+    transform: scale(0.95);
+}
+
+.active-btn {
+    background: linear-gradient(to left, #00a9ee -0.58%, #1c2347 102.11%); 
+    border: 2px white solid;
+}
+
+.button-container{
+    width: 100%;
+    margin: 0;
+    
+}

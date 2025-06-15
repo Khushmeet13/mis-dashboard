@@ -1,0 +1,93 @@
+.client-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.client-container p:hover {
+  color: rgb(10, 69, 118);
+}
+
+.client-reports {
+  cursor: pointer;
+  margin-bottom: 0;
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+  background: linear-gradient(to right, #f0f0f0 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right center; 
+  transition: background-position 0.4s ease-in-out, color 0.4s ease-in-out;
+  color: white;
+}
+
+.client-reports:hover {
+  background-position: left center; 
+  color: rgb(10, 69, 118);
+}
+
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-left: 20px;
+  cursor: pointer;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  opacity: 0;
+}
+
+.dropdown-menu.open {
+  max-height: 500px; 
+  opacity: 1;
+}
+
+.dropdown-menu p {
+  color: white;
+  padding: 8px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dropdown-menu p:hover {
+  color: rgb(10, 69, 118);
+}
+
+
+.dropdown-submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, transform 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(-10px);
+  margin-left: 15px;
+}
+
+.dropdown-submenu.open {
+  max-height: 300px; 
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+a {
+  text-decoration: none;
+}
+
+.products,
+.product-link p {
+  color: white;
+  padding: 8px;
+  background: linear-gradient(to right, #f0f0f0 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right center; 
+  transition: background-position 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+
+.products:hover,
+.product-link:hover p {
+  background-position: left center; 
+  color: rgb(10, 69, 118); 
+}
+

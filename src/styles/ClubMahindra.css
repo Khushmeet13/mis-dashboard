@@ -1,0 +1,227 @@
+.selector-card{
+    background-color: aliceblue;
+    margin-top: 10px;
+    overflow-x: auto;
+    width: 100%;
+    
+}
+
+.selector-header {
+    color: white;
+    background-color: rgb(10, 69, 118);
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    position: relative;
+  }
+  
+  .selector-header p {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 4px;
+  }
+  
+  .selector-header p:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+    z-index: 2;
+  }
+  
+
+  .selector-header p::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+  }
+  
+  .selector-header p:hover::after {
+    width: 100%;
+  }
+  
+  .selector-header p.active::after {
+    width: 100%;
+  }
+  
+  .selector-header p.active {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  
+
+.ver-divider {
+    width: 2px; 
+    height: 25px; 
+    background-color: #ccc; 
+  }
+
+.selector-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px;
+    
+}
+
+.selector-div{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.client-date-picker{
+    width: 220px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.club-btn{
+    display: flex;
+    gap: 10px;
+}
+
+.search-btn,
+.selector-toggle-btn,
+.cpql-btn{
+    background: linear-gradient(to left, #00a9ee -0.58%, #1c2347 102.11%);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.divider {
+    width: 1px; 
+    height: auto; 
+    background-color: gray; 
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.filter-container {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px;
+}
+
+.dropdown {
+    position: absolute;
+    background: rgba(10, 69, 118, 0.896);
+    border: 1px solid #ddd;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    top: 20px;
+    left: 0;
+    width: 120px;
+    border-radius: 4px;
+}
+
+.dropdown div {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.dropdown div:hover {
+    background: #f0f0f0;
+    color: rgb(10, 69, 118);
+}
+
+.cpql-container {
+    display: flex; 
+    gap: 20px; 
+    justify-content: center;
+}
+
+.table-wrapper {
+    flex: 1; 
+    overflow-x: auto; 
+}
+
+.table-header {
+    background-color: #e6f7ff;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+@media (max-width: 1024px) {
+    .selector-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .selector-div {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .club-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-btn,
+    .selector-toggle-btn,
+    .cpql-btn {
+        width: 80%;
+        text-align: center;
+    }
+
+    .divider {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .selector-div {
+        flex-direction: column;
+        align-items: stretch;
+        width: 50%;
+    }
+
+    .club-btn {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .search-btn,
+    .selector-toggle-btn,
+    .cpql-btn {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .selector-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .date-picker,
+    .custom-select {
+        width: 100%;
+        padding: 8px;
+    }
+}

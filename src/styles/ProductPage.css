@@ -1,0 +1,68 @@
+.product-container {
+    font-family: 'Poppins', sans-serif;
+    margin-left: 100px;
+    padding: 10px;
+}
+
+.product-heading-container {
+    margin-bottom: 15px;
+    background: linear-gradient(to left, #00a9ee -0.58%, #1c2347 102.11%);
+}
+
+.product-heading {
+    font-size: 20px;
+    color: white;
+    padding: 8px 20px;
+}
+
+.reporting-icon {
+    margin-left: 5px;
+    color: white;
+    font-size: 20px;
+}
+
+.product-upload-container{
+    background-color: white;
+}
+
+.upload-header{
+    background-color: #00a9ee;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(10, 69, 118);
+    color: white;
+    padding: 5px 10px;
+   
+}
+
+.upload-header p{
+    font-size: 18px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: auto;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: white;
+    transition: color 0.3s ease;
+    width: auto;
+}
+
+.icon-button:hover {
+    color: gray;
+}
+
+.show-button {
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
