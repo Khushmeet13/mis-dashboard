@@ -135,16 +135,16 @@ const BajajHL = () => {
                 <div className="divider-2"></div>
 
                 <div className="button-container">
-                  <button className={`bajaj-button ${innerActiveInterface === "lead" ? "active-btn" : ""}`}
+                  <button className={`bajaj-button ${innerActiveInterface === "lead" ? "bajaj-active-btn" : ""}`}
                     onClick={() => setInnerActiveInterface("lead")}
                   >Lead</button>
-                  <button className={`bajaj-button ${innerActiveInterface === "login" ? "active-btn" : ""}`}
+                  <button className={`bajaj-button ${innerActiveInterface === "login" ? "bajaj-active-btn" : ""}`}
                     onClick={() => setInnerActiveInterface("login")}
                   >Login</button>
-                  <button className={`bajaj-button ${innerActiveInterface === "approval" ? "active-btn" : ""}`}
+                  <button className={`bajaj-button ${innerActiveInterface === "approval" ? "bajaj-active-btn" : ""}`}
                     onClick={() => setInnerActiveInterface("approval")}
                   >Approval</button>
-                  <button className={`bajaj-button ${innerActiveInterface === "disb" ? "active-btn" : ""}`}
+                  <button className={`bajaj-button ${innerActiveInterface === "disb" ? "bajaj-active-btn" : ""}`}
                     onClick={() => setInnerActiveInterface("disb")}
                   >Disb</button>
                 </div>

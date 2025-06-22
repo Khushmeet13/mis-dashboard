@@ -4,18 +4,18 @@
 .sms-container {
   font-family: 'Poppins', sans-serif;
   background-color: #f4f4f4;
-  margin-left: 100px; 
+  margin-left: 100px;
   padding: 15px;
   position: relative;
-  overflow: visible; 
+  overflow: visible;
 }
 
 .button-container {
   display: flex;
   margin-bottom: 15px;
   background: linear-gradient(to left, #00a9ee -0.58%, #1c2347 102.11%);
-  position: relative; 
-  overflow: visible; 
+  position: relative;
+  overflow: visible;
 }
 
 .update-button,
@@ -39,8 +39,8 @@
 .txt-button:hover,
 .view-button-1:hover,
 .view-button-2:hover,
-.view-button-3:hover{
-  background: linear-gradient(to left, #a5c7f4 -0.58%, #8458B3 102.11%);
+.view-button-3:hover {
+  background: linear-gradient(to left, #002863 -0.58%, #A8E6CF 102.11%);
   border: 2px white solid;
   color: rgb(246, 236, 236);
 }
@@ -48,7 +48,7 @@
 .update-button:active,
 .csv-button:active,
 .txt-button:active,
-.view-button-1:active, 
+.view-button-1:active,
 .view-button-2:active,
 .view-button-3:active {
   transform: scale(0.95);
@@ -56,9 +56,11 @@
 }
 
 .active-btn {
-  background: linear-gradient(to left, #DCE775 -0.58%, #A8E6CF 102.11%);
+background: linear-gradient(to left, #002863 -0.58%, #A8E6CF 102.11%);
   border: 2px white solid;
   color: black;
+  font-weight: bolder;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
 }
 
 .sms-container p:hover {
@@ -85,8 +87,9 @@
 
 .csv-upload {
   flex: 1;
-  
+
 }
+
 .csv-upload.hidden {
   display: none;
 }
@@ -95,8 +98,8 @@
 .csv-report {
   flex: 1;
   padding-left: 10px;
-  border-left: 2px solid #ddd; 
-  
+  border-left: 2px solid #ddd;
+
 }
 
 .csv-report.expanded {
@@ -109,15 +112,15 @@
 }
 
 .txt-upload {
-  flex: 1;  
-  border-right: 2px solid #ddd; 
+  flex: 1;
+  border-right: 2px solid #ddd;
 }
 
 .txt-report {
-  flex: 1; 
+  flex: 1;
 }
 
-.divider-2{
+.divider-2 {
   width: 100%;
   margin-bottom: 10px;
   height: 1px;
@@ -129,6 +132,7 @@
 
 
 @media (max-width: 1024px) {
+
   .csv-container,
   .txt-container {
     display: flex;
@@ -151,4 +155,3 @@
     padding: 10px;
   }
 }
-

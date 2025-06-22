@@ -18,7 +18,7 @@
     transform: scale(0.95);
 }
 
-.active-btn {
+.bajaj-active-btn {
     background: linear-gradient(to left, #00a9ee -0.58%, #1c2347 102.11%); 
     border: 2px white solid;
 }
