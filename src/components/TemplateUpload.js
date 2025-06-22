@@ -1,12 +1,13 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
-import { BASE_URL } from "../services/api";
+//import { BASE_URL } from "../services/api";
 import { FaCheckCircle, FaMinus, FaCloudUploadAlt, FaPlus } from "react-icons/fa";
 import ReactConfetti from "react-confetti";
 import { useWindowSize } from "@react-hook/window-size";
 import '../styles/TemplateUpload.css';
 
 function TemplateUpload() {
+     const BASE_URL = process.env.BASE_URL;
     const [file, setFile] = useState(null);
     const [message, setMessage] = useState({ text: "", type: "" });
     const fileInputRef = useRef(null);

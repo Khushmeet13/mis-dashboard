@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { BASE_URL } from "../services/api";
+//import { BASE_URL } from "../services/api";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Cell, ResponsiveContainer, LineChart, Line, Sector } from "recharts";
 import { FaCloudUploadAlt, FaChartBar, FaChartLine, FaEnvelope } from "react-icons/fa";
 import { MdPriorityHigh } from 'react-icons/md';
@@ -16,6 +16,7 @@ import Papa from 'papaparse';
 
 
 const DashboardPage = () => {
+   const BASE_URL = process.env.BASE_URL;
   const [status, setStatus] = useState(null);
   const [time, setTime] = useState(new Date());
   const [selectedClient, setSelectedClient] = useState("Club Mahindra Dentsu");

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { BASE_URL } from "../services/api";
 import "../styles/AdditionalPage.css";
 import Confetti from 'react-confetti';
 import { useWindowSize } from 'react-use';
 
 
 const AdditionalPage = () => {
+    const BASE_URL = process.env.BASE_URL;
     const [activeInterface, setActiveInterface] = useState("add");
     const [popupMessage, setPopupMessage] = useState("");
     const [showPopup, setShowPopup] = useState(false);

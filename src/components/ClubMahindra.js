@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import { BASE_URL } from "../services/api";
+//import { BASE_URL } from "../services/api";
 import { FaSearch, FaCaretDown, FaEye } from "react-icons/fa";
 import "../styles/ClubMahindra.css";
 
 const ClubMahindra = () => {
+    const BASE_URL = process.env.BASE_URL;
     const [countData, setCountData] = useState([]);
     const [tableData, setTableData] = useState([]);
     const [cpqlData1, setCpqlData1] = useState([]);

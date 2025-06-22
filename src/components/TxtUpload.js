@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "../styles/TxtUpload.css";
-import { BASE_URL } from "../services/api";
+//import { BASE_URL } from "../services/api";
 import { FaSpinner, FaCheckCircle, FaExclamationCircle } from "react-icons/fa";
 
 const TxtUpload = ({ onFileUpload }) => {
+     const BASE_URL = process.env.BASE_URL;
     const [file, setFile] = useState(null);
     const [message, setMessage] = useState("");
     const [isError, setIsError] = useState(false);

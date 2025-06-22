@@ -1,10 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
-import { BASE_URL } from "../services/api";
+//import { BASE_URL } from "../services/api";
 import "../styles/CsvUpload.css";
 import { FaSpinner, FaCheckCircle, FaExclamationCircle } from "react-icons/fa";
 
 const CsvUpload = ({ setRefresh, isFetchingReport, }) => {
+   const BASE_URL = process.env.BASE_URL;
   const [files, setFiles] = useState([]);
   const [message, setMessage] = useState("");
   const [isError, setIsError] = useState(false);

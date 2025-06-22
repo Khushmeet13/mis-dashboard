@@ -3,11 +3,12 @@ import axios from "axios";
 import { FaCheckCircle } from "react-icons/fa";
 import ReactConfetti from "react-confetti";
 import { useWindowSize } from "@react-hook/window-size";
-import { BASE_URL } from "../services/api";
+//import { BASE_URL } from "../services/api";
 import "../styles/ClientUpload.css";
 
 
 const ClientUpload = ({ productName: initialProductName, setRefresh }) => {
+   const BASE_URL = process.env.BASE_URL;
   let productName = initialProductName;
   const [file, setFile] = useState(null);
   const [message, setMessage] = useState({ text: "", type: "" });

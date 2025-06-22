@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { BASE_URL } from "../services/api";
+//import { BASE_URL } from "../services/api";
 import axios from "axios";
 import { FaEdit, FaCaretDown } from "react-icons/fa";
 import '../styles/DatabasePage.css';
 
 const DatabasePage = () => {
+     const BASE_URL = process.env.BASE_URL;
     const [activeInterface, setActiveInterface] = useState("view-1");
     const [clients, setClients] = useState([]);
     const [selectedClient, setSelectedClient] = useState("");

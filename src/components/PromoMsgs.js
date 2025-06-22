@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { BASE_URL } from "../services/api";
+//import { BASE_URL } from "../services/api";
 import { FaSpinner } from "react-icons/fa";
 import axios from "axios";
 
 const PromoMsgs = () => {
+     const BASE_URL = process.env.BASE_URL;
     const [activeInterface, setActiveInterface] = useState("view-1");
     const [selectedClient, setSelectedClient] = useState("");
     const [clientData, setClientData] = useState([]);

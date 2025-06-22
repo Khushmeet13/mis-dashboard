@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { DatePicker } from "antd";
-import { BASE_URL } from "../services/api";
+//import { BASE_URL } from "../services/api";
 import { FaSpinner, FaClock, FaHourglassHalf } from "react-icons/fa";
 
 const CsvData = () => {
+     const BASE_URL = process.env.BASE_URL;
     const [clients, setClients] = useState([]);
     const [selectedClient, setSelectedClient] = useState("");
     const [fromDate, setFromDate] = useState(null);

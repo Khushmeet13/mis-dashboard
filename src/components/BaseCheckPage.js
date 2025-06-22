@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { BASE_URL } from "../services/api";
+//import { BASE_URL } from "../services/api";
 import axios from "axios";
 import { DatePicker } from "antd";
 import { FaSpinner } from "react-icons/fa";
 
 const BaseCheckPage = () => {
+     const BASE_URL = process.env.BASE_URL;
     const [clients, setClients] = useState([]);
     const [selectedClient, setSelectedClient] = useState("");
     const [fromDate, setFromDate] = useState(null);

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BASE_URL } from "../services/api";
+//import { BASE_URL } from "../services/api";
 import "../styles/CsvReport.css";
 import { DatePicker } from "antd";
 import { FaSpinner, FaChartBar, FaClock, FaHourglassHalf } from "react-icons/fa";
@@ -13,6 +13,7 @@ dayjs.extend(isBetween);
 
 
 const CsvReport = ({ setShowUploadSection }) => {
+   const BASE_URL = process.env.BASE_URL;
   const [files, setFiles] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [fromDate, setFromDate] = useState(null);
