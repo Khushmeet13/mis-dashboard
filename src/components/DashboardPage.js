@@ -16,7 +16,7 @@ import Papa from 'papaparse';
 
 
 const DashboardPage = () => {
-  const BASE_URL = process.env.BASE_URL;
+  const BASE_URL = process.env.REACT_APP_API_BASE_URL;
   const [status, setStatus] = useState(null);
   const [time, setTime] = useState(new Date());
   const [selectedClient, setSelectedClient] = useState("Club Mahindra Dentsu");
