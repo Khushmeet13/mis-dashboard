@@ -16,7 +16,7 @@ import Papa from 'papaparse';
 
 
 const DashboardPage = () => {
-   const BASE_URL = process.env.BASE_URL;
+  const BASE_URL = process.env.BASE_URL;
   const [status, setStatus] = useState(null);
   const [time, setTime] = useState(new Date());
   const [selectedClient, setSelectedClient] = useState("Club Mahindra Dentsu");
@@ -170,10 +170,13 @@ const DashboardPage = () => {
     return () => clearInterval(interval);
   }, [performanceClient]);
 
-  const pieData = performanceData.map(item => ({
-    name: item.circle,
-    value: item.count
-  }));
+ const pieData = Array.isArray(performanceData)
+  ? performanceData.map(item => ({
+      name: item.circle,
+      value: item.count
+    }))
+  : [];
+
 
   const pieColors = ["#4CAF50", "#2196F3", "#FF9800", "#9C27B0", "#00BCD4", "#F44336", "#3F51B5", "#8BC34A", "#FFC107", "#795548"];
 
