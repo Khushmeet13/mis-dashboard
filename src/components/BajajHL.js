@@ -5,7 +5,7 @@ import { FaSearch, FaCaretDown, FaEye } from "react-icons/fa";
 import "../styles/BajajHL.css";
 
 const BajajHL = () => {
-   const BASE_URL = process.env.BASE_URL;
+    const BASE_URL = process.env.REACT_APP_API_BASE_URL;
   const [countData, setCountData] = useState([]);
   const [filesData, setFilesData] = useState([]);
   const [tableData, setTableData] = useState([]);

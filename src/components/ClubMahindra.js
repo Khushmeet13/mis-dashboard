@@ -5,7 +5,7 @@ import { FaSearch, FaCaretDown, FaEye } from "react-icons/fa";
 import "../styles/ClubMahindra.css";
 
 const ClubMahindra = () => {
-    const BASE_URL = process.env.BASE_URL;
+    const BASE_URL = process.env.REACT_APP_API_BASE_URL;
     const [countData, setCountData] = useState([]);
     const [tableData, setTableData] = useState([]);
     const [cpqlData1, setCpqlData1] = useState([]);

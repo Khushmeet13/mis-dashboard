@@ -7,7 +7,7 @@ import { useWindowSize } from "@react-hook/window-size";
 import '../styles/TemplateUpload.css';
 
 function TemplateUpload() {
-     const BASE_URL = process.env.BASE_URL;
+    const BASE_URL = process.env.REACT_APP_API_BASE_URL;
     const [file, setFile] = useState(null);
     const [message, setMessage] = useState({ text: "", type: "" });
     const fileInputRef = useRef(null);

@@ -3,7 +3,7 @@ import '../styles/AckoCar.css';
 //import { BASE_URL } from "../services/api";
 
 const AckoCar = () => {
-    const BASE_URL = process.env.BASE_URL;
+     const BASE_URL = process.env.REACT_APP_API_BASE_URL;
     const [data, setData] = useState([]);
     const [countData, setCountData] = useState([]);
     const [selectedDate, setSelectedDate] = useState("");

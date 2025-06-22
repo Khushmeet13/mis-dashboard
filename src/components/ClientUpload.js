@@ -8,7 +8,7 @@ import "../styles/ClientUpload.css";
 
 
 const ClientUpload = ({ productName: initialProductName, setRefresh }) => {
-   const BASE_URL = process.env.BASE_URL;
+   const BASE_URL = process.env.REACT_APP_API_BASE_URL;
   let productName = initialProductName;
   const [file, setFile] = useState(null);
   const [message, setMessage] = useState({ text: "", type: "" });

@@ -6,7 +6,7 @@ import { useWindowSize } from 'react-use';
 
 
 const AdditionalPage = () => {
-    const BASE_URL = process.env.BASE_URL;
+     const BASE_URL = process.env.REACT_APP_API_BASE_URL;
     const [activeInterface, setActiveInterface] = useState("add");
     const [popupMessage, setPopupMessage] = useState("");
     const [showPopup, setShowPopup] = useState(false);

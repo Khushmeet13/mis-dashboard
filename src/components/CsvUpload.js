@@ -5,7 +5,7 @@ import "../styles/CsvUpload.css";
 import { FaSpinner, FaCheckCircle, FaExclamationCircle } from "react-icons/fa";
 
 const CsvUpload = ({ setRefresh, isFetchingReport, }) => {
-   const BASE_URL = process.env.BASE_URL;
+  const BASE_URL = process.env.REACT_APP_API_BASE_URL;
   const [files, setFiles] = useState([]);
   const [message, setMessage] = useState("");
   const [isError, setIsError] = useState(false);

@@ -5,7 +5,7 @@ import { FaEdit, FaCaretDown } from "react-icons/fa";
 import '../styles/DatabasePage.css';
 
 const DatabasePage = () => {
-     const BASE_URL = process.env.BASE_URL;
+    const BASE_URL = process.env.REACT_APP_API_BASE_URL;
     const [activeInterface, setActiveInterface] = useState("view-1");
     const [clients, setClients] = useState([]);
     const [selectedClient, setSelectedClient] = useState("");

@@ -5,7 +5,7 @@ import { DatePicker } from "antd";
 import { FaSpinner } from "react-icons/fa";
 
 const BaseCheckPage = () => {
-     const BASE_URL = process.env.BASE_URL;
+     const BASE_URL = process.env.REACT_APP_API_BASE_URL;
     const [clients, setClients] = useState([]);
     const [selectedClient, setSelectedClient] = useState("");
     const [fromDate, setFromDate] = useState(null);

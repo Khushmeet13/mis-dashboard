@@ -13,7 +13,7 @@ dayjs.extend(isBetween);
 
 
 const CsvReport = ({ setShowUploadSection }) => {
-   const BASE_URL = process.env.BASE_URL;
+  const BASE_URL = process.env.REACT_APP_API_BASE_URL;
   const [files, setFiles] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [fromDate, setFromDate] = useState(null);
@@ -53,20 +53,20 @@ const CsvReport = ({ setShowUploadSection }) => {
   const fetchData = async () => {
     setShowResults(true);
     setIsFetchingData(true);
-  
+
     const startTime = new Date();
     setUptime(startTime.toLocaleTimeString());
     console.log("fetchData started at:", startTime.toLocaleTimeString());
-  
+
     try {
       console.log("Preparing API URL...");
-  
+
       let url = `${BASE_URL}/sms/files/csv`;
       console.log("BASE_URL:", BASE_URL);
       console.log("Full API URL (initial):", url);
-  
+
       const params = new URLSearchParams();
-  
+
       if (fromDate && toDate) {
         const formattedFromDate = dayjs(fromDate).format("YYYY-MM-DD");
         const formattedToDate = dayjs(toDate).format("YYYY-MM-DD");
@@ -75,33 +75,33 @@ const CsvReport = ({ setShowUploadSection }) => {
         console.log("From Date:", formattedFromDate);
         console.log("To Date:", formattedToDate);
       }
-  
+
       if (selectedProduct) {
         params.append("senderName", selectedProduct);
         console.log("Selected Product:", selectedProduct);
       }
-  
+
       const finalURL = `${url}?${params.toString()}`;
       console.log("Final API URL:", finalURL);
-  
+
       console.log("Sending request to backend...");
       const response = await axios.get(finalURL);
-  
+
       console.log("4Response received ");
       console.log("Full response:", response);
-  
+
       const data = response.data;
-  
+
       setFiles(data.promotionalData || []);
       setDndFiles(data.dndData || []);
       setFailedData(data.failedData || []);
       setTotalCountData(data.totalData || []);
-  
+
       console.log("Promotional Data:", data.promotionalData);
       console.log("DND Data:", data.dndData);
       console.log("Failed Data:", data.failedData);
       console.log("Total Count Data:", data.totalData);
-  
+
       if (data.promotionalData && data.promotionalData.length === 0) {
         console.log(" No promotional data found.");
         setFilteredData([]);
@@ -109,7 +109,7 @@ const CsvReport = ({ setShowUploadSection }) => {
         console.log("Promotional data found.");
         setFilteredData(data.promotionalData);
       }
-  
+
       /*
       const calculatedTotals = {
         LB: { submitted: 0, delivered: 0, notsent: 0, failed: 0 },
@@ -128,18 +128,18 @@ const CsvReport = ({ setShowUploadSection }) => {
       });
       setTotals(calculatedTotals);
       */
-  
+
       const endTime = new Date();
       setDowntime(endTime.toLocaleTimeString());
       console.log("Fetch completed at:", endTime.toLocaleTimeString());
-  
+
       const diffSeconds = Math.floor((endTime - startTime) / 1000);
       setDuration(`${diffSeconds} secs`);
       console.log("Total duration:", `${diffSeconds} secs`);
-  
+
     } catch (error) {
       console.error("Error fetching files:", error);
-  
+
       if (error.response && error.response.data && error.response.data.message) {
         console.log("Backend error message:", error.response.data.message);
         setFilteredData([]);
@@ -148,13 +148,13 @@ const CsvReport = ({ setShowUploadSection }) => {
       } else {
         alert("Something went wrong while fetching data.");
       }
-  
+
     } finally {
       console.log("Fetch process completed. Cleaning up...");
       setIsFetchingData(false);
     }
   };
-  
+
 
   /*useEffect(() => {
     setFilteredData([]);
