@@ -13,21 +13,21 @@ router.get("/today-logs-status", async (req, res) => {
         const date = new Date();
         const year = date.getFullYear().toString().slice(2);
         const month = date.toLocaleString('default', { month: 'short' }).toLowerCase();
-        const tableName = `tbl_pm_promotions_logs_${month}${year}`;
+        const tableName = `tbl_pm_promotions_logs_may25`;
 
         const query1 = `
             SELECT source FROM ${tableName} 
             WHERE DATE(date) = ? 
             GROUP BY source
         `;
-        const [rows] = await db.execute(query1, [today]);
+        const [rows] = await db.execute(query1, ["2025-05-05"]);
 
         const query2 = `
             SELECT * FROM ${tableName}
             WHERE DATE(date) = ? 
         `;
 
-        const [result] = await db.execute(query2, [today]);
+        const [result] = await db.execute(query2, ["2025-05-05"]);
 
         const estimatedSizeBytes = result.length * 1024;
 
@@ -46,7 +46,7 @@ router.get("/today-logs-status", async (req, res) => {
 
 router.get("/statistics", async (req, res) => {
     try {
-        const client = req.query.client || "";
+        const client = req.query.client || "Club Mahindra Dentsu";
         const today = new Date().toISOString().split("T")[0];
         const date = new Date();
         const year = date.getFullYear().toString().slice(2);
@@ -63,7 +63,7 @@ router.get("/statistics", async (req, res) => {
             }
         }
 
-        const tableName = `tbl_sms_promotional_logs_${formattedSenderName}_${month}${year}`;
+        const tableName = `tbl_sms_promotional_logs_${formattedSenderName}_may25`;
 
         const query = `
         SELECT 
@@ -83,7 +83,7 @@ router.get("/statistics", async (req, res) => {
 
       `;
 
-        const [stats] = await db.execute(query, [today]);
+        const [stats] = await db.execute(query, ["2025-05-05"]);
 
         res.json(stats[0]);
     } catch (error) {
@@ -94,7 +94,7 @@ router.get("/statistics", async (req, res) => {
 
 router.get("/performance-analytics", async (req, res) => {
     try {
-        const client = req.query.client || "";
+        const client = req.query.client || "Club Mahindra Dentsu";
         const today = new Date().toISOString().split("T")[0];
         const date = new Date();
         const year = date.getFullYear().toString().slice(2);
@@ -111,14 +111,14 @@ router.get("/performance-analytics", async (req, res) => {
             }
         }
 
-        const tableName = `tbl_sms_promotional_logs_${formattedSenderName}_${month}${year}`;
+        const tableName = `tbl_sms_promotional_logs_${formattedSenderName}_may25`;
         const query1 = `
             SELECT count(status) as count, circle 
             FROM ${tableName} 
             WHERE status = 'delivered' AND DATE(submit_time) = ?
             GROUP BY circle;
       `;
-        const [result1] = await db.execute(query1, [today]);
+        const [result1] = await db.execute(query1, ["2025-05-05"]);
 
         const [tables] = await db.query(`
             SHOW TABLES LIKE 'tbl_sms_promotional_logs_${formattedSenderName}_%'
@@ -178,7 +178,7 @@ router.get("/performance-analytics", async (req, res) => {
 
 router.get("/critical-data", async (req, res) => {
     try {
-        const client = req.query.client || "";
+        const client = req.query.client || "Club Mahindra Dentsu";
         const today = new Date().toISOString().split("T")[0];
         const yesterday = new Date(Date.now() - 86400000).toISOString().split("T")[0];
         const date = new Date();
@@ -197,7 +197,7 @@ router.get("/critical-data", async (req, res) => {
             }
         }
 
-        const tableName = `${formattedSenderName}_rcs_sms_cmp_done_${month}${year}`;
+        const tableName = `${formattedSenderName}_rcs_sms_cmp_done_may25`;
 
         const query = `
             SELECT 
@@ -212,7 +212,7 @@ router.get("/critical-data", async (req, res) => {
 
         `;
 
-        const [result] = await db.execute(query, [client, yesterday, today]);
+        const [result] = await db.execute(query, ["Club Mahindra Dentsu", "2025-05-05", "2025-05-05"]);
 
         res.json(result);
     } catch (error) {

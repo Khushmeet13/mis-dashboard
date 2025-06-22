@@ -34,6 +34,9 @@ const DashboardPage = () => {
   const [heatmapPoints, setHeatmapPoints] = useState([]);
   const [isMonthwise, setIsMonthwise] = useState(false);
 
+  console.log("BASE URL:", process.env.BASE_URL);
+
+
 
   const toggleView = () => {
     setIsMonthwise(prev => !prev);
